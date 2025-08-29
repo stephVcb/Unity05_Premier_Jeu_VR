@@ -29,14 +29,18 @@ public class Trigger : MonoBehaviour
 
     void ShowGreen()
     {
-        if (greenCauldron) greenCauldron.SetActive(true);
-        if (redCauldron) redCauldron.SetActive(false);
+        //if (greenCauldron) greenCauldron.SetActive(true);
+        //if (redCauldron) redCauldron.SetActive(false);
+        greenCauldron.SetActive(true);
+        redCauldron.SetActive(false);
     }
 
     void ShowRed()
     {
-        if (redCauldron) redCauldron.SetActive(true);
-        if (greenCauldron) greenCauldron.SetActive(false);
+        //if (redCauldron) redCauldron.SetActive(true);
+        //if (greenCauldron) greenCauldron.SetActive(false);
+        redCauldron.SetActive(true);
+        greenCauldron.SetActive(false);
     }
 
 }
