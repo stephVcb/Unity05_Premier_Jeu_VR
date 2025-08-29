@@ -1,16 +1,42 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField]
+    private string goodTag = "Good";
+    [SerializeField]
+    private string badTag = "Bad";
+
+    [SerializeField]
+    private GameObject greenCauldron;
+
+    [SerializeField]
+    private GameObject redCauldron;
+
+
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag(badTag))
+        {
+            ShowRed();
+        }
+        else
+        {
+            ShowGreen();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void ShowGreen()
     {
-        
+        if (greenCauldron) greenCauldron.SetActive(true);
+        if (redCauldron) redCauldron.SetActive(false);
     }
+
+    void ShowRed()
+    {
+        if (redCauldron) redCauldron.SetActive(true);
+        if (greenCauldron) greenCauldron.SetActive(false);
+    }
+
 }
